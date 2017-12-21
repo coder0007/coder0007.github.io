@@ -18,7 +18,7 @@
 <meta property="og:description" content="逆向工程字面意思就是反向生成工程, 和 Hibernate一样, MyBatis也有自己的逆向工程工具。详细信息请看官方文档 使用MyBatis逆向工程, 我们就不用再手动创建Model实体类以及对应的Mapper.xml文件和dao类；它可以直接连接数据库的表自动帮我们完成这些操作。是不是很方便？其实也只需要简单的几步就可以了。 首先我们从MyBatis的逆向工程Github仓库下载最新的jar">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/2017/12/15/mybatis逆向工程生成源码/mybatis_jar.png">
-<meta property="og:updated_time" content="2017-12-15T10:03:51.744Z">
+<meta property="og:updated_time" content="2017-12-16T01:41:17.260Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mybatis逆向工程生成源码">
 <meta name="twitter:description" content="逆向工程字面意思就是反向生成工程, 和 Hibernate一样, MyBatis也有自己的逆向工程工具。详细信息请看官方文档 使用MyBatis逆向工程, 我们就不用再手动创建Model实体类以及对应的Mapper.xml文件和dao类；它可以直接连接数据库的表自动帮我们完成这些操作。是不是很方便？其实也只需要简单的几步就可以了。 首先我们从MyBatis的逆向工程Github仓库下载最新的jar">
@@ -187,7 +187,7 @@
 </em> 数据库的表 table<br><br>### 3.执行代码<br><br>在src包下新建一个Main.java 文件, 内容也是从官方那里Copy过来的<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.mybatis.generator.api.MyBatisGenerator;</span><br><span class="line"><span class="keyword">import</span> org.mybatis.generator.config.Configuration;</span><br><span class="line"><span class="keyword">import</span> org.mybatis.generator.config.xml.ConfigurationParser;</span><br><span class="line"><span class="keyword">import</span> org.mybatis.generator.internal.DefaultShellCallback;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">generator</span><span class="params">()</span> <span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line">        List&lt;String&gt; warnings = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">        <span class="keyword">boolean</span> overwrite = <span class="keyword">true</span>;</span><br><span class="line">        <span class="comment">//指定逆向工程de配置文件</span></span><br><span class="line">        File configFile = <span class="keyword">new</span> File(<span class="string">"src/generatorConfig.xml"</span>);</span><br><span class="line">        ConfigurationParser cp = <span class="keyword">new</span> ConfigurationParser(warnings);</span><br><span class="line">        Configuration config = cp.parseConfiguration(configFile);</span><br><span class="line">        DefaultShellCallback callback = <span class="keyword">new</span> DefaultShellCallback(overwrite);</span><br><span class="line">        MyBatisGenerator myBatisGenerator = <span class="keyword">new</span> MyBatisGenerator(config,</span><br><span class="line">                callback, warnings);</span><br><span class="line">        myBatisGenerator.generate(<span class="keyword">null</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line">    <span class="comment">// write your code here</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Main generatorSqlmap = <span class="keyword">new</span> Main();</span><br><span class="line">            generatorSqlmap.generator();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><br>运行程序，刷新程序。就会看到生成的如下源代码:<br><br><img src="生成效果.png" style="float:left"><br><div class="clear"></div>
 
 <h2 id="快速使用"><a href="#快速使用" class="headerlink" title="快速使用"></a>快速使用</h2><ul>
-<li><a href="https://github.com/coder0007/mybatis_test" target="_blank" rel="noopener">git clone</a></li>
+<li><a href="https://github.com/coder0007/mybatis_test" target="_blank" rel="noopener">github clone</a></li>
 <li>用你的IDEA打开即可。</li>
 </ul>
 
@@ -197,7 +197,7 @@
 
 
 
-    <a data-url="http://yoursite.com/2017/12/15/mybatis逆向工程生成源码/" data-id="cjb7x709w000220urtoq8alhv" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/12/15/mybatis逆向工程生成源码/" data-id="cjbehxjcc0003f4urliqrc5lb" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -334,6 +334,16 @@
         
 <nav id="article-nav">
     
+        <a href="/2017/12/20/太通安全并购企业问卷调查/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            太通安全并购企业问卷调查
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
     
         <a href="/2017/12/14/简历/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">上一篇</strong>
@@ -352,6 +362,26 @@
         <h3 class="widget-title">最新文章</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/12/20/太通安全并购企业问卷调查/" class="thumbnail">
+    
+    
+        <span style="background-image:url(20171220104136.png)" alt="太通安全并购企业问卷调查" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2017/12/20/太通安全并购企业问卷调查/" class="title">太通安全并购企业问卷调查</a></p>
+                            <p class="item-date"><time datetime="2017-12-20T03:19:53.000Z" itemprop="datePublished">2017-12-20</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -419,7 +449,7 @@
                             <a href="/2017/12/14/hexo-github搭建个人博客/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(nodeInstall.png)" alt="hexo+github搭建个人博客" class="thumbnail-image"></span>
     
     
 </a>
@@ -452,7 +482,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">4</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">5</span></li></ul>
         </div>
     </div>
 
@@ -462,7 +492,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mybatis/">mybatis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springmvc/">springmvc</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端/">前端</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/后端/">后端</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简历/">简历</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mybatis/">mybatis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springmvc/">springmvc</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端/">前端</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/博客/">博客</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/后端/">后端</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简历/">简历</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -472,7 +502,7 @@
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/java/" style="font-size: 15px;">java</a> <a href="/tags/mybatis/" style="font-size: 10px;">mybatis</a> <a href="/tags/springmvc/" style="font-size: 10px;">springmvc</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/后端/" style="font-size: 20px;">后端</a> <a href="/tags/简历/" style="font-size: 10px;">简历</a>
+            <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/java/" style="font-size: 15px;">java</a> <a href="/tags/mybatis/" style="font-size: 10px;">mybatis</a> <a href="/tags/springmvc/" style="font-size: 10px;">springmvc</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/后端/" style="font-size: 20px;">后端</a> <a href="/tags/简历/" style="font-size: 10px;">简历</a>
         </div>
     </div>
 
