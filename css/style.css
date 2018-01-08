@@ -342,6 +342,15 @@ code {
 #main .main-body-content:after {
   clear: both;
 }
+.article-summary .article-summary-inner .thumbnail {
+  outline: 1px solid #ccc;
+}
+.article-summary-inner {
+  opacity: 0.8;
+}
+.article-summary-inner:hover {
+  opacity: 1;
+}
 #header {
   background: #26272b;
   padding-bottom: 60px;
