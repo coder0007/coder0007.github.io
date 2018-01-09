@@ -345,11 +345,11 @@ code {
 .article-summary .article-summary-inner .thumbnail {
   outline: 1px solid #ccc;
 }
-.article-summary-inner {
-  opacity: 0.8;
+.article-summary-inner:hover .thumbnail {
+  outline: 1px solid #000;
 }
-.article-summary-inner:hover {
-  opacity: 1;
+.article-summary-inner:hover .article-excerpt {
+  color: #000 !important;
 }
 #header {
   background: #26272b;
