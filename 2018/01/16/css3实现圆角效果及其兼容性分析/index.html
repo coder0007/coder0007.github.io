@@ -17,12 +17,12 @@
 <meta property="og:site_name" content="小蝌蚪(smallCoder)">
 <meta property="og:description" content="一、CSS3圆角的优点传统的圆角生成方案，必须使用多张图片作为背景图案。CSS3的出现，使得我们再也不必浪费时间去制作这些图片了，而且还有其他多个优点：  减少维护的工作量。图片文件的生成、更新、编写网页代码，这些工作都不再需要了。 提高网页性能。由于不必再发出多余的HTTP请求，网页的载入速度将变快。 增加视觉可靠性。某些情况下（网络拥堵、服务器出错、网速过慢等等），背景图片会下载失败，导致视觉">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://coder0007.com/2018/01/16/css3实现圆角效果及其兼容性分析/20180116114512.png">
-<meta property="og:updated_time" content="2018-01-16T06:20:42.235Z">
+<meta property="og:image" content="https://note.youdao.com/yws/api/personal/file/E66035402CED4BD39D9D45B162E43F35?method=download&amp;shareKey=0b3a01271de39ddc9be79361e2f743c3">
+<meta property="og:updated_time" content="2018-01-16T06:27:09.899Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="css3实现圆角效果及其兼容性分析">
 <meta name="twitter:description" content="一、CSS3圆角的优点传统的圆角生成方案，必须使用多张图片作为背景图案。CSS3的出现，使得我们再也不必浪费时间去制作这些图片了，而且还有其他多个优点：  减少维护的工作量。图片文件的生成、更新、编写网页代码，这些工作都不再需要了。 提高网页性能。由于不必再发出多余的HTTP请求，网页的载入速度将变快。 增加视觉可靠性。某些情况下（网络拥堵、服务器出错、网速过慢等等），背景图片会下载失败，导致视觉">
-<meta name="twitter:image" content="http://coder0007.com/2018/01/16/css3实现圆角效果及其兼容性分析/20180116114512.png">
+<meta name="twitter:image" content="https://note.youdao.com/yws/api/personal/file/E66035402CED4BD39D9D45B162E43F35?method=download&amp;shareKey=0b3a01271de39ddc9be79361e2f743c3">
     
 
     
@@ -173,7 +173,7 @@
 <ul>
 <li>减少维护的工作量。图片文件的生成、更新、编写网页代码，这些工作都不再需要了。</li>
 <li>提高网页性能。由于不必再发出多余的HTTP请求，网页的载入速度将变快。</li>
-<li>增加视觉可靠性。某些情况下（网络拥堵、服务器出错、网速过慢等等），背景图片会下载失败，导致视觉效果不佳。CSS3就不会发生这种情况。<h3 id="二、border-radius属性"><a href="#二、border-radius属性" class="headerlink" title="二、border-radius属性"></a>二、border-radius属性</h3>CSS3圆角只需设置一个属性：border-radius（含义是”边框半径”）。你为这个属性提供一个值，就能同时设置四个圆角的半径。所有合法的CSS度量值都可以使用：em、ex、pt、px、百分比等等。<br>比如，下面是一个div方框：<br><img src="20180116114512.png" alt=""><br>现在设置它的圆角半径为15px：<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">border-radius</span>: 15<span class="selector-tag">px</span>;</span><br></pre></td></tr></table></figure>
+<li>增加视觉可靠性。某些情况下（网络拥堵、服务器出错、网速过慢等等），背景图片会下载失败，导致视觉效果不佳。CSS3就不会发生这种情况。<h3 id="二、border-radius属性"><a href="#二、border-radius属性" class="headerlink" title="二、border-radius属性"></a>二、border-radius属性</h3>CSS3圆角只需设置一个属性：border-radius（含义是”边框半径”）。你为这个属性提供一个值，就能同时设置四个圆角的半径。所有合法的CSS度量值都可以使用：em、ex、pt、px、百分比等等。<br>比如，下面是一个div方框：<br><img src="https://note.youdao.com/yws/api/personal/file/E66035402CED4BD39D9D45B162E43F35?method=download&amp;shareKey=0b3a01271de39ddc9be79361e2f743c3" alt=""><br>现在设置它的圆角半径为15px：<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">border-radius</span>: 15<span class="selector-tag">px</span>;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p><img src="20180116114740.png" alt=""><br>这条语句同时将每个圆角的”水平半径”（horizontal radius）和”垂直半径”（vertical radius）都设置为15px。<br><img src="20180116115005.png" alt=""><br>border-radius可以同时设置1到4个值。如果设置1个值，表示4个圆角都使用这个值。如果设置两个值，表示左上角和右下角使用第一个值，右上角和左下角使用第二个值。如果设置三个值，表示左上角使用第一个值，右上角和左下角使用第二个值，右下角使用第三个值。如果设置四个值，则依次对应左上角、右上角、右下角、左下角（顺时针顺序）。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">border-radius</span><span class="selector-pseudo">:15px</span> 5<span class="selector-tag">px</span>;</span><br></pre></td></tr></table></figure></p>
@@ -329,7 +329,7 @@
                             <a href="/2018/01/16/css3实现圆角效果及其兼容性分析/" class="thumbnail">
     
     
-        <span style="background-image:url(20180116114512.png)" alt="css3实现圆角效果及其兼容性分析" class="thumbnail-image"></span>
+        <span style="background-image:url(https://note.youdao.com/yws/api/personal/file/E66035402CED4BD39D9D45B162E43F35?method=download&amp;shareKey=0b3a01271de39ddc9be79361e2f743c3)" alt="css3实现圆角效果及其兼容性分析" class="thumbnail-image"></span>
     
     
 </a>
