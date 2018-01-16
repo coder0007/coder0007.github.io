@@ -18,7 +18,7 @@
 <meta property="og:description" content="一、CSS3圆角的优点传统的圆角生成方案，必须使用多张图片作为背景图案。CSS3的出现，使得我们再也不必浪费时间去制作这些图片了，而且还有其他多个优点：  减少维护的工作量。图片文件的生成、更新、编写网页代码，这些工作都不再需要了。 提高网页性能。由于不必再发出多余的HTTP请求，网页的载入速度将变快。 增加视觉可靠性。某些情况下（网络拥堵、服务器出错、网速过慢等等），背景图片会下载失败，导致视觉">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://note.youdao.com/yws/api/personal/file/E66035402CED4BD39D9D45B162E43F35?method=download&shareKey=0b3a01271de39ddc9be79361e2f743c3">
-<meta property="og:updated_time" content="2018-01-16T06:42:17.424Z">
+<meta property="og:updated_time" content="2018-01-16T06:45:08.270Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="css3实现圆角效果及其兼容性分析">
 <meta name="twitter:description" content="一、CSS3圆角的优点传统的圆角生成方案，必须使用多张图片作为背景图案。CSS3的出现，使得我们再也不必浪费时间去制作这些图片了，而且还有其他多个优点：  减少维护的工作量。图片文件的生成、更新、编写网页代码，这些工作都不再需要了。 提高网页性能。由于不必再发出多余的HTTP请求，网页的载入速度将变快。 增加视觉可靠性。某些情况下（网络拥堵、服务器出错、网速过慢等等），背景图片会下载失败，导致视觉">
@@ -176,23 +176,23 @@
 <li>增加视觉可靠性。某些情况下（网络拥堵、服务器出错、网速过慢等等），背景图片会下载失败，导致视觉效果不佳。CSS3就不会发生这种情况。</li>
 </ul>
 <h3 id="二、border-radius属性"><a href="#二、border-radius属性" class="headerlink" title="二、border-radius属性"></a>二、border-radius属性</h3><p>CSS3圆角只需设置一个属性：border-radius（含义是”边框半径”）。你为这个属性提供一个值，就能同时设置四个圆角的半径。所有合法的CSS度量值都可以使用：em、ex、pt、px、百分比等等。<br>比如，下面是一个div方框：<br><img style="float:left" src="https://note.youdao.com/yws/api/personal/file/E66035402CED4BD39D9D45B162E43F35?method=download&shareKey=0b3a01271de39ddc9be79361e2f743c3"></p>
-<div style="clean:both;"></div><br>现在设置它的圆角半径为15px：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">border-radius</span>: 15<span class="selector-tag">px</span>;</span><br></pre></td></tr></table></figure><br><br><img style="float:left" src="20180116114740.png"><br><div style="clean:both;"></div><br>这条语句同时将每个圆角的”水平半径”（horizontal radius）和”垂直半径”（vertical radius）都设置为15px。<br><img style="float:left" src="20180116115005.png"><br><div style="clean:both;"></div><br>border-radius可以同时设置1到4个值。如果设置1个值，表示4个圆角都使用这个值。如果设置两个值，表示左上角和右下角使用第一个值，右上角和左下角使用第二个值。如果设置三个值，表示左上角使用第一个值，右上角和左下角使用第二个值，右下角使用第三个值。如果设置四个值，则依次对应左上角、右上角、右下角、左下角（顺时针顺序）。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">border-radius</span><span class="selector-pseudo">:15px</span> 5<span class="selector-tag">px</span>;</span><br></pre></td></tr></table></figure><br><br><img style="float:left" src="20180116115228.png"><br><div style="clean:both;"></div>
+<div style="clear:both;"></div><br>现在设置它的圆角半径为15px：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">border-radius</span>: 15<span class="selector-tag">px</span>;</span><br></pre></td></tr></table></figure><br><br><img style="float:left" src="20180116114740.png"><br><div style="clear:both;"></div><br>这条语句同时将每个圆角的”水平半径”（horizontal radius）和”垂直半径”（vertical radius）都设置为15px。<br><img style="float:left" src="20180116115005.png"><br><div style="clear:both;"></div><br>border-radius可以同时设置1到4个值。如果设置1个值，表示4个圆角都使用这个值。如果设置两个值，表示左上角和右下角使用第一个值，右上角和左下角使用第二个值。如果设置三个值，表示左上角使用第一个值，右上角和左下角使用第二个值，右下角使用第三个值。如果设置四个值，则依次对应左上角、右上角、右下角、左下角（顺时针顺序）。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">border-radius</span><span class="selector-pseudo">:15px</span> 5<span class="selector-tag">px</span>;</span><br></pre></td></tr></table></figure><br><br><img style="float:left" src="20180116115228.png"><br><div style="clear:both;"></div>
 
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">border-radius</span>: 15<span class="selector-tag">px</span> 5<span class="selector-tag">px</span> 25<span class="selector-tag">px</span>;</span><br></pre></td></tr></table></figure>
 <p><img style="float:left" src="20180116115515.png"></p>
-<div style="clean:both;"></div>
+<div style="clear:both;"></div>
 
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">border-radius</span>: 15<span class="selector-tag">px</span> 5<span class="selector-tag">px</span> 25<span class="selector-tag">px</span> 0<span class="selector-tag">px</span>;</span><br></pre></td></tr></table></figure>
 <p><img style="float:left" src="20180116115651.png"></p>
-<div style="clean:both;"></div><br>左下角的半径为0，就变成直角了。<br><br>border-radius还可以用斜杠设置第二组值。这时，第一组值表示水平半径，第二组值表示垂直半径。第二组值也可以同时设置1到4个值，应用规则与第一组值相同。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">border-radius: 15px 5px / 3px;</span><br></pre></td></tr></table></figure><br><br><img style="float:left" src="20180116120040.png"><br><div style="clean:both;"></div>
+<div style="clear:both;"></div><br>左下角的半径为0，就变成直角了。<br><br>border-radius还可以用斜杠设置第二组值。这时，第一组值表示水平半径，第二组值表示垂直半径。第二组值也可以同时设置1到4个值，应用规则与第一组值相同。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">border-radius: 15px 5px / 3px;</span><br></pre></td></tr></table></figure><br><br><img style="float:left" src="20180116120040.png"><br><div style="clear:both;"></div>
 
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">border-radius: 15px 5px 25px / 3px 5px;</span><br></pre></td></tr></table></figure>
 <p><img style="float:left" src="20180116120257.png"></p>
-<div style="clean:both;"></div>
+<div style="clear:both;"></div>
 
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">border-radius: 15px 5px 25px 5px / 3px 5px 10px 15px;</span><br></pre></td></tr></table></figure>
 <p><img style="float:left" src="20180116120433.png"></p>
-<div style="clean:both;"></div>
+<div style="clear:both;"></div>
 
 <h3 id="三、单个圆角的设置"><a href="#三、单个圆角的设置" class="headerlink" title="三、单个圆角的设置"></a>三、单个圆角的设置</h3><p>除了同时设置四个圆角以外，还可以单独对每个角进行设置。对应四个角，CSS3提供四个单独的属性：</p>
 <ul>
@@ -203,11 +203,11 @@
 </li>
 </ul>
 <p><img style="float:left" src="20180116120802.png"></p>
-<div style="clean:both;"></div>
+<div style="clear:both;"></div>
 
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">border-top-left-radius</span>: 15<span class="selector-tag">px</span> 5<span class="selector-tag">px</span>;</span><br></pre></td></tr></table></figure>
 <p><img style="float:left" src="20180116120923.png"></p>
-<div style="clean:both;"></div>
+<div style="clear:both;"></div>
 
 <h3 id="四、浏览器支持"><a href="#四、浏览器支持" class="headerlink" title="四、浏览器支持"></a>四、浏览器支持</h3><p>IE 9、Opera 10.5、Safari 5、Chrome 4和Firefox 4，都支持上述的border-radius属性。早期版本的Safari和Chrome，支持-webkit-border-radius属性，早期版本的Firefox支持-moz-border-radius属性。<br>目前来看，为了保证兼容性，只需同时设置如下属性即可。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-webkit-border-radius: 15px;</span><br><span class="line">-moz-border-radius: 15px;</span><br><span class="line">border-radius: 15px;</span><br></pre></td></tr></table></figure></p>
 <p>（注意：border-radius必须放在最后声明，否则可能会失效。）<br>另外，早期版本Firefox的单个圆角的语句，与标准语法略有不同。</p>
@@ -219,7 +219,7 @@
 </ul>
 <h3 id="五、注意事项"><a href="#五、注意事项" class="headerlink" title="五、注意事项"></a>五、注意事项</h3><p>虽然各大浏览器都支持border-radius，但是在某些细节上，实现都不一样。当四个角的颜色、宽度、风格（实线框、虚线框等）、单位都相同时，所有浏览器的渲染结果基本一致；一旦四个角的设置不相同，就会出现很大的差异。比如，下面这段代码在不同的浏览器中，渲染结果就相差很大。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">border-color</span>: <span class="selector-tag">black</span>;</span><br><span class="line"><span class="selector-tag">border-style</span>: <span class="selector-tag">solid</span> <span class="selector-tag">dashed</span>;</span><br><span class="line"><span class="selector-tag">border-width</span>: 1<span class="selector-tag">px</span> 2<span class="selector-tag">px</span> 3<span class="selector-tag">px</span>;</span><br><span class="line"><span class="selector-tag">border-top-color</span>: <span class="selector-tag">red</span>;</span><br><span class="line"><span class="selector-tag">border-radius</span>: 5%;</span><br></pre></td></tr></table></figure></p>
 <p><img style="float:left" src="20180116141508.png"></p>
-<div style="clean:both;"></div>
+<div style="clear:both;"></div>
 
 <p>另外，并非所有浏览器，都支持将圆角半径设为一个百分比值。<br>因此，目前最安全的做法，就是将每个圆角边框的风格和宽度，都设为一样的值，并且避免使用百分比值。</p>
 <h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><p>1、<a href="https://msdn.microsoft.com/en-us/magazine/gg508841.aspx" target="_blank" rel="noopener">Replace Those Images with CSS: Rounded Corners</a><br>2、<a href="http://www.ruanyifeng.com/blog/2010/12/detailed_explanation_of_css3_rounded_corners.html" target="_blank" rel="noopener">CSS3圆角详解</a></p>
@@ -317,6 +317,16 @@
         
 <nav id="article-nav">
     
+        <a href="/2018/01/16/TAB选项卡兼容到IE6/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            TAB选项卡兼容到IE6
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
     
         <a href="/2018/01/16/css3实现背景色渐变兼容所有浏览器/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">上一篇</strong>
@@ -335,6 +345,26 @@
         <h3 class="widget-title">最新文章</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/01/16/TAB选项卡兼容到IE6/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://note.youdao.com/yws/api/personal/file/D926CF9843464E5CB69514F634BA0624?method=download&amp;shareKey=c8d3ee17404dca2e8e71002bae8a05ec)" alt="TAB选项卡兼容到IE6" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/01/16/TAB选项卡兼容到IE6/" class="title">TAB选项卡兼容到IE6</a></p>
+                            <p class="item-date"><time datetime="2018-01-16T08:52:52.000Z" itemprop="datePublished">2018-01-16</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -416,26 +446,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2017/12/15/mybatis逆向工程生成源码/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://note.youdao.com/yws/api/personal/file/434A3B1D810A40F79D0831FDBD64C31B?method=download&amp;shareKey=4997893eebd13bf0f74b164d4bbe54f6)" alt="mybatis逆向工程生成源码" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/技术/">技术</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/技术/后端/">后端</a></p>
-                            <p class="item-title"><a href="/2017/12/15/mybatis逆向工程生成源码/" class="title">mybatis逆向工程生成源码</a></p>
-                            <p class="item-date"><time datetime="2017-12-15T07:38:12.000Z" itemprop="datePublished">2017-12-15</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -455,7 +465,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">5</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">5</span></li></ul>
         </div>
     </div>
 
@@ -465,7 +475,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ECMAscript5-1/">ECMAscript5.1</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/">css3</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mybatis/">mybatis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springmvc/">springmvc</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端/">前端</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/博客/">博客</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/后端/">后端</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简历/">简历</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ECMAscript5-1/">ECMAscript5.1</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/">css3</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mybatis/">mybatis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springmvc/">springmvc</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端/">前端</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/博客/">博客</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/后端/">后端</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简历/">简历</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -475,7 +485,7 @@
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/ECMAscript5-1/" style="font-size: 10px;">ECMAscript5.1</a> <a href="/tags/css/" style="font-size: 13.33px;">css</a> <a href="/tags/css3/" style="font-size: 13.33px;">css3</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/java/" style="font-size: 13.33px;">java</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/mybatis/" style="font-size: 10px;">mybatis</a> <a href="/tags/springmvc/" style="font-size: 10px;">springmvc</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/后端/" style="font-size: 16.67px;">后端</a> <a href="/tags/简历/" style="font-size: 10px;">简历</a>
+            <a href="/tags/ECMAscript5-1/" style="font-size: 10px;">ECMAscript5.1</a> <a href="/tags/css/" style="font-size: 16.67px;">css</a> <a href="/tags/css3/" style="font-size: 13.33px;">css3</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/java/" style="font-size: 13.33px;">java</a> <a href="/tags/javascript/" style="font-size: 13.33px;">javascript</a> <a href="/tags/mybatis/" style="font-size: 10px;">mybatis</a> <a href="/tags/springmvc/" style="font-size: 10px;">springmvc</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/后端/" style="font-size: 16.67px;">后端</a> <a href="/tags/简历/" style="font-size: 10px;">简历</a>
         </div>
     </div>
 
